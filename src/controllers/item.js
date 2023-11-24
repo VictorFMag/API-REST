@@ -1,4 +1,3 @@
-const { INTEGER } = require('sequelize');
 const itemModel = require('../models/item')
 
 async function listItems() {
@@ -20,11 +19,17 @@ async function deleteItem(id_param) {
   return item;
 }
 
-/*
-async function updateItem(id_param, atributeToChange, newValue) {
-  const item = await itemModel.update({[atributeToChange]: newValue}, {where: {id: id_param}});
-  return item;
+async function updateItem(id_param, novosValores){
+  const existeItem = await itemModel.findOne({ where: { id: `${id_param}` } });
+
+  if (!existeItem) {
+    throw new Error(`O item com ID ${id_param} não existe!`);
+  }
+
+  await itemModel.update(novosValores, { where: { id: `${id_param}` } });
+
+  const itemAtualizado = await itemModel.findOne({ where: { id: `${id_param}` } });
+  return itemAtualizado;
 }
-*/
 
 module.exports = { createItem, getItem, listItems, deleteItem, updateItem }
