@@ -1,7 +1,7 @@
 <h1>API-com-Express-Sequelize-SQLite</h1>
 <h2>How to use?</h2>
 <h3>Intalling the dependencies</h3>
-First, make sure you have <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer">nodeJS</a> installed in your computer.
+First, make sure you have <a href="https://nodejs.org/en">nodeJS</a> installed in your computer.
 <br><br>Open the root folder in the terminal and type 'npm install'.
 <br><br>All the dependencies will be automatically installed, but if is not, you can install one by one. The dependencies are listed with their versions in the package.json file.
 <hr>
